@@ -1,0 +1,8 @@
+setup:
+  project: django-api
+  config: dev
+environments:
+  - name: dev
+    project: django-api
+  - name: prd
+    project: django-api

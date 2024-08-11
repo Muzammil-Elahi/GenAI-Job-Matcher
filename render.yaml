@@ -1,0 +1,21 @@
+services:
+- type: web
+  name: match-django-api
+  runtime: python
+  repo: https://github.com/wusixuan0/jd-match-api
+  plan: free
+  envVars:
+  - key: OPENSEARCH_USERNAME_HOST
+    sync: false
+  - key: OPENSEARCH_USERNAME
+    sync: false
+  - key: OPENSEARCH_PASSWORD
+    sync: false
+  - key: GOOGLE_API_KEY
+    sync: false
+  - key: DATABASE_URL
+    sync: false
+  region: ohio
+  buildCommand: "./build.sh"
+  startCommand: python -m gunicorn config.asgi:application -k uvicorn.workers.UvicornWorker
+version: "1"

@@ -1,0 +1,8 @@
+/venv
+
+.DS_Store
+
+*.pyc
+__pycache__/
+
+api/services/example_data.py
